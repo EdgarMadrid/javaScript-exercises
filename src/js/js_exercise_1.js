@@ -1,5 +1,15 @@
+const buttonChanger = document.getElementById("change-bg-button");
 const cardExercises = document.querySelector(".card-exercises");
 
-cardExercises.addEventListener("click", () => {
-  cardExercises.style.backgroundColor = "#000000";
+const ColorRandom = () => {
+  const letters = "0123456789ABCDEF";
+  let color = "#";
+  for (let i = 0; i < 6; i++) {
+    color += letters[Math.floor(Math.random() * 16)];
+  }
+  return color;
+};
+
+buttonChanger.addEventListener("click", () => {
+  cardExercises.style.backgroundColor = ColorRandom();
 });
